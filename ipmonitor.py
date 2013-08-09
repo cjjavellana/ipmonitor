@@ -6,9 +6,9 @@ Created on Aug 9, 2013
 @author: Christian
 '''
 
+import os
 from ipmonitor.router.AzTech import DSL1015EW
 from ipmonitor.github.GitHubUpdater import GitHubUpdater
-import os
 
 def main():
     print("Interrogating IP Address from DSL1015EW")
