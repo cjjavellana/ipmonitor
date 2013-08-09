@@ -1,5 +1,3 @@
-<h1>An External IP Change Detector and Updater Tool</h1>
-
 Short Story
 ===============================================
 I have setup my personal CI (Continuous Integration Tool) using jenkins and GitHub. 
