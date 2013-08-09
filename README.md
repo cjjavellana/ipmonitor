@@ -16,6 +16,6 @@ Comparing the IP of the previous run against the IP extracted in the current run
 
 Project Dependencies
 ===================================================
-Python 2.7.5
-BeautifulSoup 4
-
+Python 2.7.5 <br/>
+BeautifulSoup 4 <br/>
+PyGitHub <br/>

@@ -1,3 +1,5 @@
+#! /usr/bin/env python2.7
+
 '''
 Created on Aug 9, 2013
 
@@ -14,6 +16,9 @@ The class for interrogating an aztech router model DSL1015EW
 class DSL1015EW:
     
     def __init__(self):
+        '''
+        Reads the Json Response from http://192.168.1.254/main_json.html
+        '''
         response = urllib2.urlopen('http://192.168.1.254/main_json.html')
         str_response = response.read().encode('utf-8').replace('\n', '') \
             .replace('{', '{"')    \
@@ -23,6 +28,8 @@ class DSL1015EW:
     
         self.json_obj = json.loads(str_response, object_hook=_decode_dict)
 
-            
     def get_external_ip(self):
+        '''
+        Returns the Router's External Ip Address 
+        '''
         return self.json_obj['wanipaddress']
