@@ -3,4 +3,5 @@
 github_credentials
 ipaddress
 *.pyc
+*.log
 .settings
