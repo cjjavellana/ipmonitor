@@ -36,7 +36,7 @@ def main():
     
     if has_ip_changed(router.get_external_ip()):
         props = {}    
-        with open("github_credentials") as f:
+        with open('github_credentials') as f:
             for line in f:
                 if line == '': continue
                 val = line.strip().split("=")

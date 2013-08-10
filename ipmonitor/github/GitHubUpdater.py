@@ -5,6 +5,9 @@ Created on Aug 9, 2013
 '''
 
 from github import Github
+import logging
+
+module_logger = logging.getLogger('ipmonitor.githubupdater')
 
 class GitHubUpdater:
     '''
@@ -32,10 +35,10 @@ class GitHubUpdater:
         '''
         new_url = 'http://' + new_ip_address + ':8083/github-webhook/'
         
-        print 'Updating Jenkins Hook Url to ' + new_url
+        module_logger.info('Updating Jenkins Hook Url to ' + new_url)
         
         jenkins_hook = self.repo.get_hook(self.HOOK_ID)
         jenkins_hook._config['jenkins_hook_url'] = new_url
         jenkins_hook.edit(jenkins_hook._name, jenkins_hook._config)
         
-        print 'Jenkins Hook Url Updated'
+        module_logger('Jenkins Hook Url Updated')
