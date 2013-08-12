@@ -5,3 +5,4 @@ ipaddress
 *.pyc
 *.log
 .settings
+email.properties
