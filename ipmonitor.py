@@ -10,6 +10,7 @@ import os
 from ipmonitor.router.AzTech import DSL1015EW
 from ipmonitor.github.GitHubUpdater import GitHubUpdater
 import logging
+from ipmonitor.email.EmailSender import EmailSender
 
 module_logger = logging.getLogger('ipmonitor.main')
 
@@ -46,6 +47,10 @@ def main():
         g = GitHubUpdater()
         g.login(props['username'].encode('utf-8'), props['password'].encode('utf-8'))
         g.updateServiceHook(router.get_external_ip())
+        
+        #Send email notification
+        email = EmailSender()
+        email.send_ip_change_notification(router.get_external_ip());
     else:
         module_logger.info('Router\'s Ip has not changed')
     
